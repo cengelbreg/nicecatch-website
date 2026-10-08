@@ -1,0 +1,5 @@
+<!doctype html><meta charset="utf-8"><title>bridge</title><meta name="robots" content="noindex">
+<script>
+const f=new URLSearchParams(location.search).get('f');
+if(f&&/^[\w.-]+\.png$/.test(f)){fetch('/social/'+f).then(r=>r.blob()).then(b=>parent.postMessage({ncName:f,blob:b},'https://publish.buffer.com'));}
+</script>
