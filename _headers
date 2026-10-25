@@ -4,3 +4,6 @@
 /share/*
   Access-Control-Allow-Origin: *
   X-Robots-Tag: noindex, nofollow
+
+/social/*
+  Access-Control-Allow-Origin: *
