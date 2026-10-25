@@ -1,5 +1,7 @@
 <!doctype html><meta charset="utf-8"><title>bridge</title><meta name="robots" content="noindex">
 <script>
-const f=new URLSearchParams(location.search).get('f');
-if(f&&/^[\w.-]+\.png$/.test(f)){fetch('/social/'+f).then(r=>r.blob()).then(b=>parent.postMessage({ncName:f,blob:b},'https://publish.buffer.com'));}
+const q=new URLSearchParams(location.search),f=q.get('f');
+const ok=['https://publish.buffer.com','https://www.linkedin.com','https://x.com','https://www.instagram.com'];
+const o=ok.includes(q.get('o'))?q.get('o'):'https://publish.buffer.com';
+if(f&&/^[\w.-]+\.png$/.test(f)){fetch('/social/'+f).then(r=>r.blob()).then(b=>parent.postMessage({ncName:f,blob:b},o));}
 </script>
